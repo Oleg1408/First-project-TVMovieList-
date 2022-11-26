@@ -1,12 +1,7 @@
-//
-//  GuestDetailsViewController.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 02.10.2022.
-//
-
 import UIKit
 import SDWebImage
+import Alamofire
+import youtube_ios_player_helper
 
 class GuestMovieDetailsViewController: UIViewController {
     
@@ -16,6 +11,7 @@ class GuestMovieDetailsViewController: UIViewController {
     @IBOutlet weak var guestMovieLanguageLable: UILabel!
     @IBOutlet weak var guestMoviePopularLable: UILabel!
     @IBOutlet weak var guestMovieOverviewLable: UILabel!
+    @IBOutlet weak var guestYouTubePlayer: YTPlayerView!
     
     var guestNewValueMovie: ResultsOfTopMovie?
     
@@ -23,7 +19,22 @@ class GuestMovieDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         guestAddInfoMovie()
+        loadVideoMovie()
         
+    }
+    
+    func loadVideoMovie() {
+        
+        guard let movieIdInt = guestNewValueMovie?.id else {return}
+        let movieId = String(movieIdInt)
+        let urlVideo = "https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=f28226d77e6c2b87d7d08bc99737fd1a&language=en-US"
+        
+        AF.request(urlVideo).responseDecodable(of: ModelsOfVideoMovie.self) { responseModelsVideo in
+            if let data = responseModelsVideo.value?.results {
+                self.guestYouTubePlayer.load(withVideoId: data.first?.key ?? "")
+                self.guestYouTubePlayer.playVideo()
+            }
+        }
     }
     
     func guestAddInfoMovie() {

@@ -1,12 +1,7 @@
-//
-//  GuestTVDetailsViewController.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 02.10.2022.
-//
-
 import UIKit
 import SDWebImage
+import youtube_ios_player_helper
+import Alamofire
 
 class GuestTVDetailsViewController: UIViewController {
     
@@ -16,7 +11,7 @@ class GuestTVDetailsViewController: UIViewController {
     @IBOutlet weak var guestTvLanguageLable: UILabel!
     @IBOutlet weak var guestTvPopularLable: UILabel!
     @IBOutlet weak var guestTvOverViewLable: UILabel!
-    @IBOutlet weak var guestTvBlock: UIStackView!
+    @IBOutlet weak var guestTvYoutubePlayer: YTPlayerView!
     
     var guestNewValueTv: ResultsOfTopTV?
     
@@ -24,6 +19,22 @@ class GuestTVDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         guestAddInfoTv()
+        loadVideoTv()
+    }
+    
+    func loadVideoTv() {
+        
+        guard let tvIdInt = guestNewValueTv?.id else {return}
+        let tvId = String(tvIdInt)
+        let urlVideo = "https://api.themoviedb.org/3/tv/\(tvId)/videos?api_key=f28226d77e6c2b87d7d08bc99737fd1a&language=en-US"
+        
+        AF.request(urlVideo).responseDecodable(of: ModelsVideoTv.self) {
+            responceModelsVideo in
+            if let data = responceModelsVideo.value?.results {
+                self.guestTvYoutubePlayer.load(withVideoId: data.first?.key ?? "")
+                self.guestTvYoutubePlayer.playVideo()
+            }
+        }
     }
     
     func guestAddInfoTv() {
@@ -34,6 +45,7 @@ class GuestTVDetailsViewController: UIViewController {
         self.guestTvDataReleaseLable.text = "Release date: \(guestNewValueTv?.first_air_date ?? "")"
         self.guestTvLanguageLable.text = "Language: \(guestNewValueTv?.original_language ?? "")"
         loadPosterGuestTv(url: guestNewValueTv?.backdrop_path)
+        
     }
     
     private func loadPosterGuestTv(url: String?) {

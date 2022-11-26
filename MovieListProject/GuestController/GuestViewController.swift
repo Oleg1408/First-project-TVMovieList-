@@ -1,15 +1,8 @@
-//
-//  GuestViewController.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 02.10.2022.
-//
 
 import UIKit
 
 class GuestViewController: UIViewController {
     
-    @IBOutlet weak var centralTextLable: UILabel!
     @IBOutlet weak var guestSearchBar: UISearchBar!
     @IBOutlet weak var guestSegmentControl: UISegmentedControl!
     @IBOutlet weak var guestTableView: UITableView!

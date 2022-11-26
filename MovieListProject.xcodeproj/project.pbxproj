@@ -50,6 +50,10 @@
 		68A6291328E98A3D00EBB9D3 /* GuestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6291228E98A3D00EBB9D3 /* GuestViewController.swift */; };
 		68A6291528E997B700EBB9D3 /* GuestMoviesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6291428E997B700EBB9D3 /* GuestMoviesDetailsViewController.swift */; };
 		68A6291828E9B05A00EBB9D3 /* GuestTVDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A6291728E9B05A00EBB9D3 /* GuestTVDetailsViewController.swift */; };
+		68E4884329300D4F0054B9BF /* ModelsOfVideoMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E4884129300D4F0054B9BF /* ModelsOfVideoMovie.swift */; };
+		68E4884429300D4F0054B9BF /* VideoMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E4884229300D4F0054B9BF /* VideoMovie.swift */; };
+		68E4884E29311B430054B9BF /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E4884C29311B430054B9BF /* Results.swift */; };
+		68E4884F29311B430054B9BF /* ModelsVideoTv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E4884D29311B430054B9BF /* ModelsVideoTv.swift */; };
 		68F8B73A28E0CD1400CF50AC /* LoginAndRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8B73928E0CD1400CF50AC /* LoginAndRegistrationViewController.swift */; };
 		68F8B73C28E0CD4400CF50AC /* AddRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F8B73B28E0CD4400CF50AC /* AddRegistrationViewController.swift */; };
 		68F8B73E28E3835100CF50AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68F8B73D28E3835100CF50AC /* GoogleService-Info.plist */; };
@@ -104,6 +108,10 @@
 		68A6291228E98A3D00EBB9D3 /* GuestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestViewController.swift; sourceTree = "<group>"; };
 		68A6291428E997B700EBB9D3 /* GuestMoviesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMoviesDetailsViewController.swift; sourceTree = "<group>"; };
 		68A6291728E9B05A00EBB9D3 /* GuestTVDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTVDetailsViewController.swift; sourceTree = "<group>"; };
+		68E4884129300D4F0054B9BF /* ModelsOfVideoMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsOfVideoMovie.swift; sourceTree = "<group>"; };
+		68E4884229300D4F0054B9BF /* VideoMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMovie.swift; sourceTree = "<group>"; };
+		68E4884C29311B430054B9BF /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		68E4884D29311B430054B9BF /* ModelsVideoTv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsVideoTv.swift; sourceTree = "<group>"; };
 		68F8B73928E0CD1400CF50AC /* LoginAndRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndRegistrationViewController.swift; sourceTree = "<group>"; };
 		68F8B73B28E0CD4400CF50AC /* AddRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationViewController.swift; sourceTree = "<group>"; };
 		68F8B73D28E3835100CF50AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -268,6 +276,8 @@
 			children = (
 				68941E7D28C937B600D0FA2B /* DataOfTopMovies.swift */,
 				68941E7C28C937B600D0FA2B /* ResultsOfTopMovie.swift */,
+				68E4884129300D4F0054B9BF /* ModelsOfVideoMovie.swift */,
+				68E4884229300D4F0054B9BF /* VideoMovie.swift */,
 			);
 			path = ModelsTopMovie;
 			sourceTree = "<group>";
@@ -277,6 +287,8 @@
 			children = (
 				68941E9A28CA034F00D0FA2B /* DataOfTopTV.swift */,
 				68941E9B28CA034F00D0FA2B /* ResultsOfTopTV.swift */,
+				68E4884D29311B430054B9BF /* ModelsVideoTv.swift */,
+				68E4884C29311B430054B9BF /* Results.swift */,
 			);
 			path = ModelsTopTV;
 			sourceTree = "<group>";
@@ -503,6 +515,7 @@
 				6831316028D8DE6600C5AEA2 /* DataOfUpcomingMovie.swift in Sources */,
 				6831315F28D8DE6600C5AEA2 /* DatesOfUpComingMovie.swift in Sources */,
 				68941E5B28C92D8B00D0FA2B /* AppDelegate.swift in Sources */,
+				68E4884329300D4F0054B9BF /* ModelsOfVideoMovie.swift in Sources */,
 				6830EBF528FDEC8800CD93E0 /* DataManagerTV.swift in Sources */,
 				68A0277728CF4D1E0028A7D8 /* SaveTvViewController.swift in Sources */,
 				684A0BB428F730E400AE4C39 /* SettingsTVModel.swift in Sources */,
@@ -513,10 +526,12 @@
 				6831316328D8DF0A00C5AEA2 /* UpcomingViewController.swift in Sources */,
 				68941E7E28C937B600D0FA2B /* ResultsOfTopMovie.swift in Sources */,
 				684A0BBA28F7351200AE4C39 /* SettingsUpcomingMovie.swift in Sources */,
+				68E4884E29311B430054B9BF /* Results.swift in Sources */,
 				6831316728D8F7A100C5AEA2 /* UpcomingMovieCollectionViewCell.swift in Sources */,
 				682E1719292A9A1500B2F48E /* MainNavigationController.swift in Sources */,
 				681CB6CE28E8CB830058BBEF /* ErCheckLogin.swift in Sources */,
 				6830EBF328FDE9E900CD93E0 /* DataManagerMovie.swift in Sources */,
+				68E4884F29311B430054B9BF /* ModelsVideoTv.swift in Sources */,
 				68941E9D28CA035000D0FA2B /* ResultsOfTopTV.swift in Sources */,
 				684A0BB628F7339600AE4C39 /* SettingsMovieModel.swift in Sources */,
 				68941E7F28C937B600D0FA2B /* DataOfTopMovies.swift in Sources */,
@@ -527,6 +542,7 @@
 				68A6291528E997B700EBB9D3 /* GuestMoviesDetailsViewController.swift in Sources */,
 				681CB6D428E8D58B0058BBEF /* ShowAlert.swift in Sources */,
 				6831316928D9CA2600C5AEA2 /* DetailsUpMovieViewController.swift in Sources */,
+				68E4884429300D4F0054B9BF /* VideoMovie.swift in Sources */,
 				68F8B73C28E0CD4400CF50AC /* AddRegistrationViewController.swift in Sources */,
 				684A0BB228F7258300AE4C39 /* SettingsCell.swift in Sources */,
 			);

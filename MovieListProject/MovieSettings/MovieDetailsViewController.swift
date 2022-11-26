@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import youtube_ios_player_helper
+import Alamofire
 
 class MovieDetailsViewController: UIViewController {
     
@@ -17,6 +19,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var languageMovieLable: UILabel!
     @IBOutlet weak var settingButtonSave: UIButton!
     @IBOutlet weak var posterMovieImageView: UIImageView!
+    @IBOutlet weak var movieYoutubePlayer: YTPlayerView!
     
     var newValueMovie: ResultsOfTopMovie?
     var movieArrayObject: ObjectMovieAndTv?
@@ -26,6 +29,20 @@ class MovieDetailsViewController: UIViewController {
         
         addInfoMovie()
         transitionMovieFromSaveToDetails()
+        loadMovieVideo()
+    }
+    
+    func loadMovieVideo() {
+        guard let movieIdInt = newValueMovie?.id else {return}
+        let movieId = String(movieIdInt)
+        let urlVideo = "https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=f28226d77e6c2b87d7d08bc99737fd1a&language=en-US"
+        
+        AF.request(urlVideo).responseDecodable(of: ModelsOfVideoMovie.self) { responseModelsVideo in
+            if let data = responseModelsVideo.value?.results {
+                self.movieYoutubePlayer.load(withVideoId: data.first?.key ?? "")
+                self.movieYoutubePlayer.playVideo()
+            }
+        }
     }
     
     func addInfoMovie() {
@@ -36,13 +53,13 @@ class MovieDetailsViewController: UIViewController {
         self.dataReleaseLable.text = "Release date: \(newValueMovie?.release_date ?? "")"
         self.languageMovieLable.text = "Language: \(newValueMovie?.original_language ?? "")"
         loadPosterMovie(url: newValueMovie?.backdrop_path)
-       
     }
     
     func transitionMovieFromSaveToDetails() {
         
         guard let valueOfMovieOblect = movieArrayObject else {return}
         settingButtonSave.isHidden = true
+        movieYoutubePlayer.isHidden = true
         movieLableView.text = valueOfMovieOblect.TitleObject
         dataReleaseLable.text = "Release date: \(valueOfMovieOblect.ReleaseDataObject)"
         languageMovieLable.text = "Language: \(valueOfMovieOblect.LanguageObject)"

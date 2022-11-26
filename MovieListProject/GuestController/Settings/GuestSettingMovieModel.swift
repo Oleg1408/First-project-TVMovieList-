@@ -1,10 +1,3 @@
-//
-//  SettingForLoadMovie.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 10.10.2022.
-//
-
 import Foundation
 import Alamofire
 

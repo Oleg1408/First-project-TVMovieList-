@@ -52,13 +52,13 @@ class ViewController: UIViewController {
     @IBAction func pressButton(_ sender: UISegmentedControl) {
         tableViewMovie.reloadData()
     }
-
+    
     @IBAction func pressButtonExit(_ sender: Any) {
-
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                if let mainController = storyboard.instantiateViewController(withIdentifier: "\(MainNavigationController.self)") as?
-                    MainNavigationController  {
-                    self.present(mainController, animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainController = storyboard.instantiateViewController(withIdentifier: "\(MainNavigationController.self)") as?
+            MainNavigationController  {
+            self.present(mainController, animated: true, completion: nil)
         }
     }
 }

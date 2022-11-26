@@ -1,10 +1,3 @@
-//
-//  ObjectMovieAndTv.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 22.10.2022.
-//
-
 import RealmSwift
 
 class ObjectMovieAndTv: Object {

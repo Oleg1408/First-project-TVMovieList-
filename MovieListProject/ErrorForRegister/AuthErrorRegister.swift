@@ -1,10 +1,3 @@
-//
-//  AuthErrorRegister.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 01.10.2022.
-//
-
 import Foundation
 
 enum AuthErrorRegister {

@@ -1,10 +1,3 @@
-//
-//  AddRegistrationViewController.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 25.09.2022.
-//
-
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
@@ -76,8 +69,8 @@ class AddRegistrationViewController: UIViewController {
                         completion(.success)
                     }
                 }
+            }
         }
-    }
     
     @IBAction func pressedSingUpButton(_ sender: Any) {
         register(email: enterEmailTextField.text, password: enterRegisterPasswordTextField.text) { result in

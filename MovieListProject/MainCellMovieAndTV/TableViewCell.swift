@@ -38,7 +38,6 @@ class TableViewCell: UITableViewCell {
     
     func objectConfigur(with tvAndMovie: ObjectMovieAndTv) {
         self.firstAirDateLableView.text = tvAndMovie.ReleaseDataObject
-    
     }
     
     func loadPosterMovieTv(url: String?) {

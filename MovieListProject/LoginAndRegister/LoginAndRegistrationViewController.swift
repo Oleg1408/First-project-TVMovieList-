@@ -1,10 +1,3 @@
-//
-//  LoginAndRegistrationViewController.swift
-//  MovieListProject
-//
-//  Created by Олег Курбатов on 25.09.2022.
-//
-
 import UIKit
 import FirebaseCore
 import FirebaseFirestore

@@ -7,6 +7,8 @@
 
 import UIKit
 import SDWebImage
+import youtube_ios_player_helper
+import Alamofire
 
 class DetailsUpMovieViewController: UIViewController {
     
@@ -16,6 +18,7 @@ class DetailsUpMovieViewController: UIViewController {
     @IBOutlet weak var upcomMovieLanguageLable: UILabel!
     @IBOutlet weak var upcomMovieRaitingLable: UILabel!
     @IBOutlet weak var upcomMovieOverviewLable: UILabel!
+    @IBOutlet weak var upcomingYoutubePlayer: YTPlayerView!
     
     var newUpcomingMovieArray: ResultsOfUpcomingMovie?
     
@@ -23,6 +26,21 @@ class DetailsUpMovieViewController: UIViewController {
         super.viewDidLoad()
         
         addUpcomingMovieDetails()
+        loadUpcomingMovieVideo()
+    }
+    
+    
+    func loadUpcomingMovieVideo() {
+        guard let movieIdInt = newUpcomingMovieArray?.id else {return}
+        let movieId = String(movieIdInt)
+        let urlVideo = "https://api.themoviedb.org/3/movie/\(movieId)/videos?api_key=f28226d77e6c2b87d7d08bc99737fd1a&language=en-US"
+        
+        AF.request(urlVideo).responseDecodable(of: ModelsOfVideoMovie.self) { responseModelsVideo in
+            if let data = responseModelsVideo.value?.results {
+                self.upcomingYoutubePlayer.load(withVideoId: data.first?.key ?? "")
+                self.upcomingYoutubePlayer.playVideo()
+            }
+        }
     }
     
     func addUpcomingMovieDetails() {

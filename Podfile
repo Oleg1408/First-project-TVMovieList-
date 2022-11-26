@@ -8,6 +8,6 @@ pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'FirebaseUI'
-
+pod "youtube-ios-player-helper"
 
 end
