@@ -8,7 +8,6 @@ class LoginAndRegistrationViewController: UIViewController {
     @IBOutlet weak var centralTextLable: UILabel!
     @IBOutlet weak var enterEmailTextField: UITextField!
     @IBOutlet weak var enterPasswordTextField: UITextField!
-    @IBOutlet weak var errorOutputTextLable: UILabel!
     @IBOutlet weak var settingsLoginButton: UIButton!
     @IBOutlet weak var settingRegisterButton: UIButton!
     @IBOutlet weak var settingGuestLoginButton: UIButton!
@@ -17,7 +16,6 @@ class LoginAndRegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        settingErrorOutputTextLable()
         settingsCentralTextLable()
         settingsBackButton()
     }
@@ -25,12 +23,7 @@ class LoginAndRegistrationViewController: UIViewController {
     func settingsBackButton() {
         backButton.backButtonTitle = "Back to login"
     }
-    
-    func settingErrorOutputTextLable() {
-        errorOutputTextLable.alpha = 0
-        errorOutputTextLable.textColor = .systemRed
-    }
-    
+
     func settingsCentralTextLable() {
         centralTextLable.text = "MovTvList"
     }

@@ -9,7 +9,6 @@ class AddRegistrationViewController: UIViewController {
     @IBOutlet weak var enterRegisterSecondNameTextField: UITextField!
     @IBOutlet weak var enterEmailTextField: UITextField!
     @IBOutlet weak var enterRegisterPasswordTextField: UITextField!
-    @IBOutlet weak var errorOutputTextLable: UILabel!
     
     var dataBaseFirebase: Firestore!
     
@@ -17,13 +16,7 @@ class AddRegistrationViewController: UIViewController {
         super.viewDidLoad()
         
         settingsMainTextLable()
-        settingserrorOutputTextLable()
         dataBaseFirebase = Firestore.firestore()
-    }
-    
-    func settingserrorOutputTextLable() {
-        errorOutputTextLable.alpha = 0
-        errorOutputTextLable.textColor = .systemRed
     }
     
     func settingsMainTextLable() {
